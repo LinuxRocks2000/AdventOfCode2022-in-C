@@ -11,7 +11,7 @@ struct RopeUnique{ // linked list
 struct RopeUnique* start;
 struct RopeUnique* cur;
 
-int knots[2][10];
+int knots[2][10]; // I haven't made it dynamic enough to [safely] resize this.
 
 
 struct RopeUnique* newRopePos(int x, int y){
