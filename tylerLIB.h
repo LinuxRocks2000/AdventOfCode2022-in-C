@@ -60,7 +60,7 @@ char* getLine(FILE* file){
 }
 
 
-char** splitString(char* string, char split, int* length){
+char** splitString(char* string, char split, long long* length){
 	int len = 0;
 	int bufLen = 0;
 	char* buf = malloc(1); // Hate this? So do I!
@@ -84,5 +84,13 @@ char** splitString(char* string, char split, int* length){
 	len ++;
 	length[0] = len; // I don't want to figure out how to do this properly
 	return ret;
+}
+
+
+void purgeUntil(FILE* file, char thang){
+	char chr = fgetc(file);
+	while (chr != thang && chr != EOF){
+		chr = fgetc(file);
+	}
 }
 
